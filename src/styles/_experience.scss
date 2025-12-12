@@ -1,0 +1,61 @@
+@use "variables" as *;
+
+.experience-card {
+  text-align: center;
+  padding: 24px 28px;
+  border-radius: 15px;
+  transition: all 0.2s ease-in;
+  //   box-shadow: 0 0 0 2px #cb4f4f29, 0 1.548px 5px #b744fa24,
+  //     0 4.27228px 10px -10px #ee72572e, inset 0 4px 5.6px #b744fa24;
+
+  /* Glass blur + transparency */
+  background: rgba(201, 0, 0, 0.196);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(201, 201, 30, 0.36);
+
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0 0 0 1.548px #cb4f4f29, 0 1.548px 3.096px #b744fa24,
+      0 4.27228px 40px 21.3614px #ee72572e, inset 0 4px 5.6px #b744fa24;
+    backdrop-filter: blur(25px);
+    background-color: #2a083d24;
+  }
+
+  h2 {
+    margin-top: 35px;
+    color: $red;
+  }
+
+  h3 {
+    color: $color-wakanda-purple;
+  }
+
+  ul {
+    background-color: transparent;
+    // padding: 0px;
+
+    li {
+      background-color: transparent;
+      margin: 15px 0;
+      color: $color-silver;
+      text-align: left;
+      //   font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 1.5px;
+      text-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .experience-card {
+    margin: 10px 15px;
+    padding: 0 10px;
+
+    ul {
+      padding-left: 15px;
+    }
+  }
+}

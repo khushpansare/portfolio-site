@@ -1,0 +1,72 @@
+@use "variables" as *;
+
+.project-wrapper {
+  .project-card {
+    margin: 15px 0;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // border: 1px solid #00ff88;
+    // height: 500px;
+    overflow: hidden;
+    padding: 10px;
+    transition: 0.2s ease-in;
+    box-shadow: 0 0 0 1.548px #ff404024, 0 1.548px 3.096px #35233d,
+      0 4.27228px 85.4456px 21.3614px #8410ff1a, inset 0 4px 11.6px #ff41172e;
+
+    h1 {
+      color: $color-wakanda-purple;
+      text-transform: capitalize;
+    }
+
+    p {
+      color: $color-silver;
+    }
+
+    .left {
+      width: 50%;
+      justify-self: start;
+    }
+
+    .right {
+      width: 50%;
+    }
+
+    &:hover {
+      transition: 0.2s ease-out;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: $laptop) {
+  .project-wrapper {
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+
+      .left {
+        width: 100%;
+        justify-self: start;
+      }
+
+      .right {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .project-wrapper {
+    margin: 10px;
+    padding: 0 10px;
+
+    .project-card {
+      margin: 15px 00px;
+    }
+  }
+}

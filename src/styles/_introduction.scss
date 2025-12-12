@@ -1,0 +1,71 @@
+@use "variables" as *;
+
+.intro-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .profile-img {
+    // width: 50%;
+    margin: 0 20px;
+
+    img {
+      // width: 150px;
+      height: 250px;
+      border-radius: 50%;
+    }
+  }
+
+  .introduction {
+    margin: 0 20px;
+    width: 50%;
+    justify-self: center;
+  }
+
+  p {
+    font-size: 22px;
+  }
+}
+
+// Media-Query code
+
+@media (max-width: $laptop) {
+  .intro-wrapper {
+    .profile-img {
+      margin: 0 20px;
+    }
+
+    .introduction {
+      margin: 0 20px;
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .intro-wrapper {
+    flex-direction: column;
+    align-items: center;
+
+    .profile-img {
+      margin: 0;
+    }
+
+    .introduction {
+      margin: 0;
+      width: 100%;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .intro-wrapper {
+    margin: 10px;
+    padding: 0 10px;
+  }
+}
