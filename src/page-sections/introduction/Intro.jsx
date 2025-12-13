@@ -1,11 +1,51 @@
 import React from "react";
 import Profile_Img from "../../assets/PassPort.jpg";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function Home() {
+  useGSAP(() => {
+    gsap.from("#mern-stack-heading", {
+      y: 175,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+    });
+  }, []);
+
+  useGSAP(() => {
+    gsap.from("#frontend-heading", {
+      y: 50,
+      x: 320,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+    });
+  }, []);
+
+  useGSAP(() => {
+    gsap.from("#backend-heading", {
+      y: -30,
+      x: -270,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+    });
+  }, []);
+
   return (
     <div id="intro">
       <div className="intro-wrapper">
         <div className="profile-img">
+          <div className="roles-heading-content">
+            <h3 id="mern-stack-heading">MERN Stack Developer</h3>
+            <h3 id="frontend-heading">
+              Company needs frontend developer, I'm here.
+            </h3>
+            <h3 id="backend-heading">
+              Company needs backend developer, I'm here.
+            </h3>
+          </div>
           <img
             src={
               "https://framerusercontent.com/images/RhNcQXLzBbgY4uudDynS5LSGC8.png?scale-down-to=512"
@@ -13,6 +53,7 @@ function Home() {
             alt="Profile_Img.jpg"
           />
         </div>
+
         <div className="introduction">
           <h1>About ME</h1>
 

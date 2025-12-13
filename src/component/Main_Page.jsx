@@ -10,11 +10,16 @@ import Component_Wrapper from "../wrapper/Component_Wrapper";
 function Main_Page() {
   return (
     <>
-      <Intro />
-      <Skills />
-      <Project />
+      <Component_Wrapper>
+        <Intro />
+        <Skills />
+        <Project />
+      </Component_Wrapper>
       <Experience />
-      <Contact />
+
+      <Component_Wrapper>
+        <Contact />
+      </Component_Wrapper>
     </>
   );
 }

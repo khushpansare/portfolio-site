@@ -2,6 +2,10 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import Nav_Mobile from "./Nav_Mobile";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import _gsap from "gsap/gsap-core";
 
 function Navbar() {
   const mobile_nav_toggle_ref = useRef(null);
@@ -10,14 +14,30 @@ function Navbar() {
 
   const open_mobile_nav = () => {
     setmobile_nav_flag(!mobile_nav_flag);
-    console.log("open");
     mobile_nav_toggle_ref.current.classList.remove("mobile-nav-display");
+
+    gsap.set(mobile_nav_toggle_ref.current, { x: "0", width: 0 });
+    gsap.to(mobile_nav_toggle_ref.current, {
+      width: "70vw",
+      duration: 0.6,
+      ease: "sine.out",
+    });
   };
 
   const close_mobile_nav = () => {
     setmobile_nav_flag(!mobile_nav_flag);
-    console.log("close");
-    mobile_nav_toggle_ref.current.classList.add("mobile-nav-display");
+
+    // gsap.set(navRef.current, { width: "0" });
+    gsap.to(mobile_nav_toggle_ref.current, {
+      x: "100%",
+      // width: "0",
+      duration: 0.6,
+      ease: "back.in",
+    });
+
+    setTimeout(() => {
+      mobile_nav_toggle_ref.current.classList.add("mobile-nav-display");
+    }, 600);
   };
 
   const scrollToSection = (id) => {
@@ -28,14 +48,31 @@ function Navbar() {
         block: "start",
       });
     }
-
     close_mobile_nav();
   };
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      "#navbar",
+      {
+        y: -100, // start above card
+      },
+      {
+        y: 0, // hit the card
+        duration: 0.5,
+        ease: "bounce.out",
+        // repeat: 2, // total bounces = 3
+      }
+    );
+  });
+
   return (
     <>
-      <header>
+      <header id="navbar">
         <nav>
+          <div class="bg-blur"></div>
           <ul className="left-side">
             <img src={Logo} alt="" />
           </ul>

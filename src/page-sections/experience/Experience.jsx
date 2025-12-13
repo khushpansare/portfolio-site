@@ -1,6 +1,40 @@
 import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Experience() {
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
+    // Array.from()
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".experience-card",
+        // scroller: "body",
+        // markers: true,
+        start: "top 70%",
+        end: "top 40%",
+        scrub: 2,
+        // duration: 0.2,
+      },
+    });
+
+    tl.to(".experience-card", {
+      scaleX: 0,
+      scaleY: 0,
+      duration: 0.5,
+      ease: "power1.inOut",
+      // transformOrigin: "center center",
+    });
+
+    tl.to(".experience-card", {
+      scaleX: 1,
+      scaleY: 1,
+      duration: 0.5,
+      ease: "elastic.out(1, 0.35)",
+      // transformOrigin: "center center",
+    });
+  });
   return (
     <div id="experience">
       <h1>Experience</h1>

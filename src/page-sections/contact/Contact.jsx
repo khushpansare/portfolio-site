@@ -1,6 +1,26 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
 
 function Contact() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(function () {
+    gsap.from(".contact-wrapper", {
+      y: 500,
+      duration: 2,
+      scrollTrigger: {
+        trigger: "#contact",
+        scroller: "body",
+        // markers: true,
+        start: "top 90%",
+        end: "top: 40%",
+        scrub: 2,
+      },
+    });
+  });
+
   return (
     <div id="contact">
       <div className="contact-wrapper">

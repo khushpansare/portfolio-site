@@ -1,12 +1,51 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
 
 function Skills() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(function () {
+    gsap.from("#skill-card-1", {
+      x: -300,
+      // xPercent: -80,
+      duration: 2,
+      rotate: -25,
+      scrollTrigger: {
+        trigger: "#skill-card-1",
+        scroller: "body",
+        // markers: true,
+        start: "top 70%",
+        end: "top 30%",
+        scrub: 2,
+      },
+    });
+  });
+
+  useGSAP(function () {
+    gsap.from("#skill-card-2", {
+      x: 300,
+      // xPercent: 80,
+      duration: 2,
+      rotate: -25,
+      scrollTrigger: {
+        trigger: "#skill-card-2",
+        scroller: "body",
+        // markers: true,
+        start: "top 70%",
+        end: "top 30%",
+        scrub: 2,
+      },
+    });
+  });
+
   return (
     <div id="skills">
       <h1>Skills</h1>
 
       <div className="skills-wrapper">
-        <div className="skill-card">
+        <div id="skill-card-1" className="skill-card ">
           <h3>Frontend development</h3>
 
           <div className="frontend-skills">
@@ -23,7 +62,7 @@ function Skills() {
           </div>
         </div>
 
-        <div className="skill-card">
+        <div id="skill-card-2" className="skill-card">
           <h3>Backend development</h3>
           <div className="backend-skills">
             <ul>

@@ -16,11 +16,7 @@ function Component_Wrapper(props) {
   //   });
   // });
 
-  return (
-    <div className="main-page-container">
-      <Main_Page />
-    </div>
-  );
+  return <div className="main-page-container">{props.children}</div>;
 }
 
 export default Component_Wrapper;
