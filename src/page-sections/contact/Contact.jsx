@@ -2,20 +2,21 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
+import Resume from "./Resume";
 
 function Contact() {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(function () {
     gsap.from(".contact-wrapper", {
-      y: 500,
-      duration: 2,
+      y: 200,
+      duration: 0.5,
       scrollTrigger: {
         trigger: "#contact",
         scroller: "body",
         // markers: true,
-        start: "top 90%",
-        end: "top: 40%",
+        start: "top 80%",
+        end: "top: 55%",
         scrub: 2,
       },
     });
@@ -54,6 +55,8 @@ function Contact() {
             </a>
           </li>
         </ul>
+
+        <Resume />
 
         <h3>Thank YOU for your Time</h3>
       </div>

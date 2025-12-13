@@ -6,6 +6,7 @@ import Experience from "../page-sections/experience/Experience";
 import About from "../page-sections/about/About";
 import Contact from "../page-sections/contact/Contact";
 import Component_Wrapper from "../wrapper/Component_Wrapper";
+import Resume from "../page-sections/contact/Resume";
 
 function Main_Page() {
   return (
@@ -19,6 +20,7 @@ function Main_Page() {
 
       <Component_Wrapper>
         <Contact />
+        {/* <Resume /> */}
       </Component_Wrapper>
     </>
   );
