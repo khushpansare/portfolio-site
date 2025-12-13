@@ -6,39 +6,65 @@ import React from "react";
 function Skills() {
   gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(function () {
-    gsap.from("#skill-card-1", {
-      x: -300,
-      // xPercent: -80,
-      duration: 2,
-      rotate: -25,
-      scrollTrigger: {
-        trigger: "#skill-card-1",
-        scroller: "body",
-        // markers: true,
-        start: "top 70%",
-        end: "top 30%",
-        scrub: 2,
-      },
-    });
-  });
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
 
-  useGSAP(function () {
-    gsap.from("#skill-card-2", {
-      x: 300,
-      // xPercent: 80,
-      duration: 2,
-      rotate: -25,
-      scrollTrigger: {
-        trigger: "#skill-card-2",
-        scroller: "body",
-        // markers: true,
-        start: "top 70%",
-        end: "top 30%",
-        scrub: 2,
-      },
+    // Desktop
+    mm.add("(min-width: 768px)", () => {
+      gsap.from("#skill-card-1", {
+        x: -500,
+        rotate: -25,
+        scrollTrigger: {
+          trigger: "#skill-card-1",
+          start: "top 70%",
+          end: "top 30%",
+          scrub: 2,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      gsap.from("#skill-card-2", {
+        x: 500,
+        rotate: 25,
+        scrollTrigger: {
+          trigger: "#skill-card-2",
+          start: "top 70%",
+          end: "top 30%",
+          scrub: 2,
+          invalidateOnRefresh: true,
+        },
+      });
     });
-  });
+
+    // Mobile
+    mm.add("(max-width: 767px)", () => {
+      gsap.from("#skill-card-1", {
+        x: -100, // smaller value
+        rotate: -10,
+        scrollTrigger: {
+          trigger: "#skill-card-1",
+          start: "top 90%",
+          end: "top 50%",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      gsap.from("#skill-card-2", {
+        x: 100,
+        rotate: 10,
+        scrollTrigger: {
+          trigger: "#skill-card-2",
+          start: "top 90%",
+          end: "top 50%",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    });
+
+    return () => mm.revert();
+  }, []);
 
   return (
     <div id="skills">
