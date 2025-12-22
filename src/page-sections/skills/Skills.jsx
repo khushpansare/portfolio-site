@@ -12,25 +12,27 @@ function Skills() {
     // Desktop
     mm.add("(min-width: 768px)", () => {
       gsap.from("#skill-card-1", {
-        x: -500,
+        xPercent: -500,
         rotate: -25,
+        duration: 5,
         scrollTrigger: {
           trigger: "#skill-card-1",
           start: "top 70%",
           end: "top 30%",
-          scrub: 2,
+          scrub: 5,
           invalidateOnRefresh: true,
         },
       });
 
       gsap.from("#skill-card-2", {
-        x: 500,
+        xPercent: 500,
         rotate: 25,
+        duration: 5,
         scrollTrigger: {
           trigger: "#skill-card-2",
           start: "top 70%",
           end: "top 30%",
-          scrub: 2,
+          scrub: 5,
           invalidateOnRefresh: true,
         },
       });
@@ -39,7 +41,7 @@ function Skills() {
     // Mobile
     mm.add("(max-width: 767px)", () => {
       gsap.from("#skill-card-1", {
-        x: -100, // smaller value
+        xPercent: -100, // smaller value
         rotate: -10,
         scrollTrigger: {
           trigger: "#skill-card-1",
@@ -51,7 +53,7 @@ function Skills() {
       });
 
       gsap.from("#skill-card-2", {
-        x: 100,
+        xPercent: 100,
         rotate: 10,
         scrollTrigger: {
           trigger: "#skill-card-2",

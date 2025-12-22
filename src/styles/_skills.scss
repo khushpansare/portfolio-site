@@ -2,11 +2,11 @@
 
 .skills-wrapper {
   // width: 100vw;
-  // overflow: hidden;
   display: flex;
   justify-content: space-evenly;
 
   .skill-card {
+    transform: translateX(0px);
     margin: 10px 15px;
     border: 1px solid $color-wakanda-purple;
     border-radius: 10px;

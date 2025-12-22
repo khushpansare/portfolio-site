@@ -16,13 +16,13 @@
     align-items: center;
 
     .roles-heading-content {
-      position: absolute;
+      position: relative;
       // margin-top: 45px;
       z-index: 1;
       background: transparent;
 
       #mern-stack-heading {
-        margin-top: -175px;
+        margin-top: -75px;
         position: absolute;
         text-align: center;
         width: 200px;
@@ -32,7 +32,7 @@
       #frontend-heading {
         width: 200px;
         position: absolute;
-        margin-top: -50px;
+        margin-top: 50px;
         margin-left: -320px;
         text-align: right;
         color: $red;
@@ -40,7 +40,7 @@
 
       #backend-heading {
         position: absolute;
-        margin-top: 30px;
+        margin-top: 150px;
         margin-left: 270px;
         text-align: left;
         color: $red;
@@ -109,13 +109,13 @@
     .profile-img {
       .roles-heading-content {
         #mern-stack-heading {
-          margin-top: -185px;
+          margin-top: -60px;
           width: 200px;
           text-align: center;
         }
 
         #frontend-heading {
-          margin-top: -50px;
+          margin-top: 50px;
           margin-left: -320px;
           width: 0;
           text-align: right;
@@ -123,7 +123,7 @@
 
         #backend-heading {
           width: 0;
-          margin-top: 30px;
+          margin-top: 180px;
           margin-left: 120px;
         }
       }

@@ -72,7 +72,7 @@ function Navbar() {
     <>
       <header id="navbar">
         <nav>
-          <div class="bg-blur"></div>
+          <div className="bg-blur"></div>
           <ul className="left-side">
             <img src={Logo} alt="" />
           </ul>

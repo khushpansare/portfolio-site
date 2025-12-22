@@ -17,6 +17,7 @@ body,
   padding: 0;
 }
 
+// html,
 body {
   overflow-x: hidden;
 }
@@ -32,6 +33,7 @@ div[id] {
   // grid-template-columns: auto;
   place-items: center;
   justify-self: center;
+  overflow-x: hidden;
 }
 
 ul,
